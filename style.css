@@ -1,3 +1,11 @@
+:root {
+  --cor-titulos: #3b56ec;
+  --cor-texto: #5e24d3;
+  --cor-fundo-um: rgba(240, 248, 255, 0.7);
+  --cor-fundo-dois: rgba(255, 255, 255, 0.8);
+  --bcheader: rgba(255, 255, 255, 1);
+  --degrade: linear-gradient(to bottom right, white, gray);
+}
 * {
   margin: 0;
   padding: 0;
@@ -11,44 +19,124 @@ body {
   background-attachment: fixed;
 }
 header {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--bcheader);
   height: 154px;
   width: 100%;
+  transition: all;
+  transition-duration: 1s;
 }
 a {
   text-decoration: none;
 }
 li:hover {
-  color: #5e24d3;
+  color: var(--cor-texto);
   font-size: 21px;
 }
-h1, h2{
-    color: #3b56ec;
+h1,
+h2 {
+  color: var(--cor-titulos);
 }
-  #FED{
-    position: absolute;
-    left: 30px;
-    margin-top: 200px;
-    font-size: 30px;
-    color: #5e24d3;     
-  }
-#identification{
-    width: 100%;
-    height: 500px;
-    background-color: rgba(240, 248, 255, 0.7);
-  }
-  #port{
-      width: 100%;
-      padding: 10px;
-      background-color: rgba(240, 248, 255, 0.7);
 
-  }
-   #capacidades{
-       margin: 30px;
-   }
+#FED {
+  /*Texto se apresentando*/
+  position: absolute;
+  margin-left: 7.5%;
+  margin-top: 250px;
+  font-size: 40px;
+  color: var(--cor-texto);
+    animation: move;
+  animation-duration: 3s;
+  animation-delay: -1;
+  animation-fill-mode: forwards;
+}
+#identification {
+  /*campo da apresentação*/
+  width: 100%;
+  height: 700px;
+  background-color: var(--cor-fundo-um);
+}
+#CV {
+  margin-top: 30px;
+  font-size: 15px;
+  padding: 10px;
+  background-color: var(--cor-titulos);
+  border: solid black;
+  border-radius: 20px;
+}
+#Minhas-Capacidades {
+  /*campo das capacidades*/
+  width: 100%;
+  padding: 10px;
+  background-color: var(--cor-fundo-um);
+}
+#capacidades {
+  /*grid organizando os banners das capacidades*/
+  margin: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+.caps {
+  /*banner das capacidades*/
+  background-image: var(--degrade);
+  padding: 15px;
+  border-radius: 35px;
+}
+#QES {
+  width: 100%;
+  font-size: 20px;
+  background-color: var(--cor-fundo-dois);
+  padding: 5px;
+  color: var(--cor-texto);
+}
+#contato{
+  font-size: 20px;
+  background-color: var(--cor-fundo-dois);
+}
+#EntreEmContato{
+ text-align: center;
+ height: 100px;
+}
+#Contatos{
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ flex-wrap: wrap;
+ flex-shrink: 0;
+ padding: 20px;
+}
+.contatoicon{
+ background-image: var(--degrade);
+ width: 200px;
+ height: 200px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 35px;
+ margin-bottom: 100px;
+ color: black;
+ transition: background-color 200ms, width 500ms, height 500ms;
+}
+.contatoicon:hover{
+  color: var(--cor-titulos);
+}
+footer{
+  color: var(--cor-titulos);
+  font-size: 20px;
+  background-color: var(--bcheader);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes move{
+  0%{ margin-left: 0%};
+  100% {margin-left: 7.5%};
+}
 @media screen and (max-width: 1025px) {
-  #FED{
-      overflow-x: hidden;
+  #FED {
+    margin-top: 150px;
+    overflow-x: hidden;
   }
   #menu {
     font-size: 25px;
@@ -68,21 +156,24 @@ h1, h2{
     right: 30px;
     top: 50px;
   }
-  #QES {
-    width: 100%;
-    font-size: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 5px;
-    color: #5e24d3;
+
+  #picon {
+    display: none;
   }
-  #picon{
-      display: none;
+  .contatoicon{
+    font-size: 15px;
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+    margin-bottom: 0px;
+
+  }
+  #EntreEmContato{
+    height: 70px;
   }
 }
 
 @media screen and (min-width: 1026px) {
-
-
   #menuicon {
     display: none;
   }
@@ -99,15 +190,13 @@ h1, h2{
     color: #3b56ec;
   }
 
-  #QES {
-    font-size: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    color: #5e24d3;
-    padding: 10px;
+  #picon {
+    position: absolute;
+    right: 5%;
+    margin-top: 100px;
   }
-  #picon{
-      position: absolute;
-      right: 20px;
+  .contatoicon:hover{
+    width: 210px;
+    height: 210px;
   }
-
 }
